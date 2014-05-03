@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>01.Literals</title>
+    <link href="css/js-console.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <a href="01.Literals.html" class="current">01.Literals</a> |
+        <a href="02.QuotedText.html">02.QuotedText</a> |
+        <a href="03.TypeOf.html">03.TypeOf</a> |
+        <a href="04.NullAndUndefined.html">04.NullAndUndefined</a>
+    </header>
+    <div id="console">
+    </div>
+    <script src="scripts/js-console.js">
+		
+    </script>
+    <script>
+        var intLit = 777;
+        var floatLit = 7.077;
+        var boolLit = true;
+        var stringLit = 'Some text';
+        var objectLit = {
+            car: 'BMW',
+            model: '335xi'            
+        }
+        var arrayLit = ['a', 'b', 'c'];
+
+        jsConsole.writeLine('Integer: ' + intLit);
+        jsConsole.writeLine('Float: ' + floatLit);
+        jsConsole.writeLine('Boolean: ' + boolLit);
+        jsConsole.writeLine('String: ' + stringLit);
+        jsConsole.writeLine('Object: ' + objectLit.car + ' ' + objectLit.model);
+        jsConsole.writeLine('Array: ' + arrayLit);
+
+    </script>
+    <p style="font-size:12px;">
+        01. Assign all the possible JavaScript literals to different variables.
+    </p>
+</body>
+</html>

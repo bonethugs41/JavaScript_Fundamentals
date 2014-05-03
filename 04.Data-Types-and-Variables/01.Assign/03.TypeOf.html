@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>01.Literals</title>
+    <link href="css/js-console.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <a href="01.Literals.html">01.Literals</a> |
+        <a href="02.QuotedText.html">02.QuotedText</a> |
+        <a href="03.TypeOf.html" class="current">03.TypeOf</a> |
+        <a href="04.NullAndUndefined.html">04.NullAndUndefined</a>
+    </header>
+    <div id="console">
+    </div>
+    <script src="scripts/js-console.js">
+		
+    </script>
+    <script>
+        var intLit = 777;
+        var floatLit = 7.077;
+        var boolLit = true;
+        var stringLit = 'Some text';
+        var objectLit = {
+            car: 'BMW',
+            model: '335xi'
+        }
+        var arrayLit = ['a', 2, 'c'];
+
+        jsConsole.writeLine('Type of '+ intLit + ' is ' + typeof (intLit));
+        jsConsole.writeLine('Type of ' + floatLit + ' is ' + typeof (floatLit));
+        jsConsole.writeLine('Type of ' + boolLit + ' is ' + typeof (boolLit));
+        jsConsole.writeLine('Type of ' + stringLit + ' is ' + typeof (stringLit));
+        jsConsole.writeLine('Type of ' + objectLit.car + ' is ' + typeof (objectLit));
+        jsConsole.writeLine('Type of ' + arrayLit + ' is ' + typeof (arrayLit));
+
+    </script>
+    <p style="font-size:12px;">
+        03. Try typeof on all variables you created.
+    </p>
+</body>
+</html>
