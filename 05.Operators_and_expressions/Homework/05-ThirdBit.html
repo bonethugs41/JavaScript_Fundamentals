@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>05.Third bit</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="styles/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="01-OddOrEven.html">01.Odd Or Even</a> |
+        <a href="02-DevidedBy7and5.html">02.Devided by 7 and 5</a> |
+        <a href="03-RectangleArea.html">03.Rectangle's area</a> |
+        <a href="04-ThirdDigit.html">04.Check the third digit</a> |
+        <a href="05-ThirdBit.html" class="current">05.Third bit</a> |
+        <a href="06-PointInCircle.html">06.Point in a circle</a> |
+        <a href="07-PrimeNumber.html">07.Prime number</a> |
+        <a href="08-TrapezoidArea.html">08.Trapezoid area</a> |
+        <a href="09-PointOutRectangle.html">09.Point out of rectangle</a>
+        </nav>
+    </header>
+    <p>
+        Write a boolean expression for finding if the bit 3 (counting from 0) of a given integer is 1 or 0. 
+    </p>
+    <table>
+        <tr>
+            <td>
+                <label for="number">Number:</label>
+            </td>
+            <td>
+                <input type="text" id="number" />
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button class="execute" onclick="checkBit()">Check!</button>
+            </td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="scripts/js-console.js">
+    </script>
+    <script>
+        function checkBit() {
+            var number = jsConsole.readInteger('#number');
+            var bitPosition = 3;
+            var mask = 1 << bitPosition;
+            var numberMask = number & mask;
+            var bit = numberMask >> bitPosition;
+            if (bit == 0) {
+                jsConsole.writeLine('3rd bit is 0.');
+            }
+            else {
+                jsConsole.writeLine('3rd bit is 1.');
+            }
+        }
+    </script>
+</body>
+</html>

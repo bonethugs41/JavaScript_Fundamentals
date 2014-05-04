@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>02.Devided by 7 and 5</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="styles/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="01-OddOrEven.html">01.Odd Or Even</a> |
+        <a href="02-DevidedBy7and5.html" class="current">02.Devided by 7 and 5</a> |
+        <a href="03-RectangleArea.html">03.Rectangle's area</a> |
+        <a href="04-ThirdDigit.html">04.Check the third digit</a> |
+        <a href="05-ThirdBit.html">05.Third bit</a> |
+        <a href="06-PointInCircle.html">06.Point in a circle</a> |
+        <a href="07-PrimeNumber.html">07.Prime number</a> |
+        <a href="08-TrapezoidArea.html">08.Trapezoid area</a> |
+        <a href="09-PointOutRectangle.html">09.Point out of rectangle</a>
+        </nav>
+    </header>
+    <p>
+       Write a boolean expression that checks for given integer if it can be divided (without remainder) by 7 and 5 in the same time.
+    </p>
+    <table>
+        <tr>
+            <td>
+                <label for="number">Integer:</label>
+            </td>
+            <td>
+                <input type="text" id="number" />
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button class="execute" onclick="devide()">Devide</button>
+            </td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="scripts/js-console.js">
+    </script>
+    <script>
+        function devide() {
+            var number = jsConsole.readInteger('#number');
+            if ((number % 7 === 0) && (number % 5 === 0)) {
+                var result = ' CAN be devided by 5 and 7 at the same time.'; 
+            }
+            else {
+                var result = ' CANNOT be devided by 5 and 7 at the same time.';
+            }
+
+            jsConsole.writeLine(number + result);
+        }
+    </script>
+</body>
+</html>

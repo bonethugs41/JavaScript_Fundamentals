@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>08.Trapezoid area</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="styles/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="01-OddOrEven.html">01.Odd Or Even</a> |
+        <a href="02-DevidedBy7and5.html">02.Devided by 7 and 5</a> |
+        <a href="03-RectangleArea.html">03.Rectangle's area</a> |
+        <a href="04-ThirdDigit.html">04.Check the third digit</a> |
+        <a href="05-ThirdBit.html">05.Third bit</a> |
+        <a href="06-PointInCircle.html">06.Point in a circle</a> |
+        <a href="07-PrimeNumber.html">07.Prime number</a> |
+        <a href="08-TrapezoidArea.html" class="current">08.Trapezoid area</a> |
+        <a href="09-PointOutRectangle.html">09.Point out of rectangle</a>
+        </nav>
+    </header>
+    <p>
+        Write an expression that calculates trapezoid's area by given sides a and b and height h.
+    </p>
+    <table>
+        <tr>
+            <td>
+                <label for="aSide">a:</label>
+            </td>
+            <td>
+                <input type="text" id="aSide" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="bSide">b:</label>
+            </td>
+            <td>
+                <input type="text" id="bSide" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="height">Height:</label>
+            </td>
+            <td>
+                <input type="text" id="height" />
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button class="execute" onclick="checkPrime()">Check!</button>
+            </td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="scripts/js-console.js">
+    </script>
+    <script>
+        function checkPrime() {
+            var aSide = jsConsole.readInteger('#aSide');
+            var bSide = jsConsole.readInteger('#bSide');
+            var height = jsConsole.readInteger('#height');
+            var area = ((aSide + bSide) / 2) * height;
+            jsConsole.writeLine('The trapezoid area is: ' + area);
+        }
+    </script>
+</body>
+</html>

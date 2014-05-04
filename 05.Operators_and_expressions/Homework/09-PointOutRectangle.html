@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>09.Point out of rectangle</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="styles/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="01-OddOrEven.html">01.Odd Or Even</a> |
+        <a href="02-DevidedBy7and5.html">02.Devided by 7 and 5</a> |
+        <a href="03-RectangleArea.html">03.Rectangle's area</a> |
+        <a href="04-ThirdDigit.html">04.Check the third digit</a> |
+        <a href="05-ThirdBit.html">05.Third bit</a> |
+        <a href="06-PointInCircle.html">06.Point in a circle</a> |
+        <a href="07-PrimeNumber.html">07.Prime number</a> |
+        <a href="08-TrapezoidArea.html">08.Trapezoid area</a> |
+        <a href="09-PointOutRectangle.html" class="current">09.Point out of rectangle</a>
+        </nav>
+    </header>
+    <p>
+        Write an expression that checks for given point (x, y) if it is within the circle K( (1,1), 3) and out of the rectangle R(top=1, left=-1, width=6, height=2).
+    </p>
+    <table>
+        <tr>
+            <td>
+                <label for="xCoor">X:</label>
+            </td>
+            <td>
+                <input type="text" id="xCoor" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="yCoor">Y:</label>
+            </td>
+            <td>
+                <input type="text" id="yCoor" />
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button class="execute" onclick="checkDot()">Check!</button>
+            </td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="scripts/js-console.js">
+    </script>
+    <script>
+        function checkDot() {
+            var xCoor = jsConsole.readInteger('#xCoor');
+            var yCoor = jsConsole.readInteger('#yCoor');
+            var dist = Math.sqrt((xCoor * xCoor) + (yCoor * yCoor));
+            if (dist < 5) {
+                jsConsole.writeLine('The dot is in the circle.');
+            }
+            else {
+                if (dist == 5) {
+                    jsConsole.writeLine('The dot is on the circle.');
+                }
+                else {
+                    jsConsole.writeLine('The dot is outside the circle.');
+                }
+            }
+            if (xCoor >= -1 && xCoor <= 5 && yCoor >= -1 && yCoor <= 1) {
+                jsConsole.writeLine('The dot is in the rectangle.');
+            }
+            else {
+                jsConsole.writeLine('The dot is outside the rectangle.');
+            }
+        }
+    </script>
+</body>
+</html>
