@@ -1,15 +1,20 @@
-CSS
+JavaScript Fundamentals
 ===========
 
 This repository holds my homeworks for:
-Telerik Academy - CSS (April 2014)
+Telerik Academy - JavaScript Fundamentals (May 2014)
 
 Course Program
 
-* CSS Styling Introduction
-* CSS Overview 
-* CSS Presentation
-* CSS Layout
-* SASS
-* LESS
+* JavaScript-Fundamentals-Course-Introduction
+* JavaScript-Tools
+* Introduction-Javascript-Development
+* Data-Types-and-Variables
+* Operators-Expressions
+* Conditional-Statements
+* Loops
+* Arrays
+* Functions
+* Using-Objects
+* Strings
 
