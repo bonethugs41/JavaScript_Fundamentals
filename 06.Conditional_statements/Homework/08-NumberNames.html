@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>08.Number names</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="styles/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="01-IfGreater.html">01.If greater</a> | 
+            <a href="02-ShowSign.html">02.Show sign</a> | 
+            <a href="03-GreatestOfThree.html">03.Greatest of three</a> | 
+            <a href="04-SortIntegers.html">04.Sort integers</a> |  
+            <a href="05-CaseDigit.html">05.Case digit</a> | 
+            <a href="06-QuadraticEquation.html">06.Quadratic equation</a> | 
+            <a href="07-GreatestOfFive.html">07.Greatest of five</a> | 
+            <a href="08-NumberNames.html" class="current">08.Number names</a>
+        </nav>
+    </header>
+    <p>
+        Write script that asks for a digit and depending on the input shows the name of that digit (in English) using a switch statement.
+    </p>
+    <table>
+        <tr>
+            <td>
+                <label for="number">Number:</label>
+            </td>
+            <td>
+                <input type="text" id="number" />
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button class="execute" onclick="spellNumber()">Show!</button>
+            </td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+
+
+    <script src="scripts/js-console.js">
+    </script>
+    <script>
+        function spellNumber() {
+            var number = jsConsole.readInteger("#number");
+            if (number == 0) {
+                jsConsole.write("Zero");
+            }
+            if (number >= 100 && number <= 999) {
+                switch (Math.ceil(number / 100) - 1) {
+                    case 1:
+                        jsConsole.write(" One Hundred");
+                        break;
+                    case 2:
+                        jsConsole.write(" Two Hundred");
+                        break;
+                    case 3:
+                        jsConsole.write(" Three Hundred");
+                        break;
+                    case 4:
+                        jsConsole.write(" Four Hundred");
+                        break;
+                    case 5:
+                        jsConsole.write(" Five Hundred");
+                        break;
+                    case 6:
+                        jsConsole.write(" Six Hundred");
+                        break;
+                    case 7:
+                        jsConsole.write(" Seven Hundred");
+                        break;
+                    case 8:
+                        jsConsole.write(" Eight Hundred");
+                        break;
+                    case 9:
+                        jsConsole.write(" Nine Hundred");
+                        break;
+                    default:
+                        break;
+                }
+                if (number % 100 != 0) {
+                    jsConsole.write(" and");
+                    Remainder = number % 100;
+                    number = Remainder;
+                }
+            }
+            switch (number) {
+                case 10:
+                    jsConsole.write(" Ten");
+                    break;
+                case 11:
+                    jsConsole.write(" Eleven");
+                    break;
+                case 12:
+                    jsConsole.write(" Twelve");
+                    break;
+                case 13:
+                    jsConsole.write(" Thirteen");
+                    break;
+                case 14:
+                    jsConsole.write(" Fourteen");
+                    break;
+                case 15:
+                    jsConsole.write(" Fifteen");
+                    break;
+                default:
+                    break;
+            }
+            switch (Math.ceil(number / 10) - 1) {
+                case 2:
+                    jsConsole.write(" Twenty");
+                    break;
+                case 3:
+                    jsConsole.write(" Thirty");
+                    break;
+                case 4:
+                    jsConsole.write(" Forty");
+                    break;
+                case 5:
+                    jsConsole.write(" Fifty");
+                    break;
+                case 6:
+                    jsConsole.write(" Sixty");
+                    break;
+                case 7:
+                    jsConsole.write(" Seventy");
+                    break;
+                case 8:
+                    jsConsole.write(" Eighty");
+                    break;
+                case 9:
+                    jsConsole.write(" Ninety");
+                    break;
+            }
+            if ((number >= 0 && number <= 9) || ((number >= 16 && number <= 99))) {
+                switch ((number % 10)) {
+                    case 1:
+                        jsConsole.write(" One");
+                        break;
+                    case 2:
+                        jsConsole.write(" Two");
+                        break;
+                    case 3:
+                        jsConsole.write(" Three");
+                        break;
+                    case 4:
+                        jsConsole.write(" Four");
+                        break;
+                    case 5:
+                        jsConsole.write(" Five");
+                        break;
+                    case 6:
+                        jsConsole.write(" Six");
+                        if (number == 16) {
+                            jsConsole.write("teen   ");
+                        }
+                        break;
+                    case 7:
+                        jsConsole.write(" Seven");
+                        if (number == 17) {
+                            jsConsole.write("teen   ");
+                        }
+                        break;
+                    case 8:
+                        jsConsole.write(" Eight");
+                        if (number == 18) {
+                            jsConsole.write("teen   ");
+                        }
+                        break;
+                    case 9:
+                        jsConsole.write(" Nine");
+                        if (number == 19) {
+                            jsConsole.write("teen   ");
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
+            jsConsole.writeLine('');
+        }
+    </script>
+</body>
+
+</html>

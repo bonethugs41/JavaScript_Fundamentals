@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>04. Sort integers</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="styles/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="01-IfGreater.html">01.If greater</a> | 
+            <a href="02-ShowSign.html">02.Show sign</a> | 
+            <a href="03-GreatestOfThree.html">03.Greatest of three</a> | 
+            <a href="04-SortIntegers.html" class="current">04.Sort integers</a> |  
+            <a href="05-CaseDigit.html">05.Case digit</a> | 
+            <a href="06-QuadraticEquation.html">06.Quadratic equation</a> | 
+            <a href="07-GreatestOfFive.html">07.Greatest of five</a> | 
+            <a href="08-NumberNames.html">08.Number names</a>
+        </nav>
+    </header>
+    <p>
+        Sort 3 real values in descending order using nested if statements.
+    </p>
+    <table>
+        <tr>
+            <td>
+                <label for="a">a:</label>
+            </td>
+            <td>
+                <input type="text" id="a" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="b">b:</label>
+            </td>
+            <td>
+                <input type="text" id="b" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="c">c:</label>
+            </td>
+            <td>
+                <input type="text" id="c" />
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button class="execute" onclick="sortNumber()">Sort!</button>
+            </td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+
+
+    <script src="scripts/js-console.js">
+    </script>
+    <script>
+        function sortNumber() {
+            var a = jsConsole.readInteger('#a');
+            var b = jsConsole.readInteger('#b');
+            var c = jsConsole.readInteger('#c');
+            jsConsole.writeLine('Original order:');
+            jsConsole.writeLine('a = ' + a + '; b = ' + b + '; c = ' + c);
+            jsConsole.writeLine('Descending order:');
+            if (a > b) {
+                if (a > c) {
+                    if (b > c) {
+                        jsConsole.writeLine('a = ' + a + '; b = ' + b + '; c = ' + c);
+                    }
+                    else {
+                        jsConsole.writeLine('a = ' + a + '; c = ' + c + '; b = ' + b);
+                    }
+                }
+                else {
+                    jsConsole.writeLine('c = ' + c + '; a = ' + a + '; b = ' + b);
+                }
+            }
+            else if (b > c) {
+                if (a > c) {
+                    jsConsole.writeLine('b = ' + b + '; a = ' + a + '; c = ' + c);
+                }
+                else {
+                    jsConsole.writeLine('b = ' + b + '; c = ' + c + '; a = ' + a);
+                }
+            }
+            else {
+                jsConsole.writeLine('c = ' + c + '; b = ' + b + '; a = ' + a);
+            }
+        }
+    </script>
+</body>
+
+</html>

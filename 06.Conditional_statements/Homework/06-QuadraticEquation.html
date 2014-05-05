@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>06.Quadratic equation</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="styles/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="01-IfGreater.html">01.If greater</a> | 
+            <a href="02-ShowSign.html">02.Show sign</a> | 
+            <a href="03-GreatestOfThree.html">03.Greatest of three</a> | 
+            <a href="04-SortIntegers.html">04.Sort integers</a> |  
+            <a href="05-CaseDigit.html">05.Case digit</a> | 
+            <a href="06-QuadraticEquation.html" class="current">06.Quadratic equation</a> | 
+            <a href="07-GreatestOfFive.html">07.Greatest of five</a> | 
+            <a href="08-NumberNames.html">08.Number names</a>
+        </nav>
+    </header>
+    <p>
+        Write a script that enters the coefficients a, b and c of a quadratic equation.
+    </p>
+    <table>
+        <tr>
+            <td>
+                <label for="a">a:</label>
+            </td>
+            <td>
+                <input type="text" id="a" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="b">b:</label>
+            </td>
+            <td>
+                <input type="text" id="b" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="c">c:</label>
+            </td>
+            <td>
+                <input type="text" id="c" />
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button class="execute" onclick="SolveEquation()">Solve!</button>
+            </td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+
+
+    <script src="scripts/js-console.js">
+    </script>
+    <script>
+        function SolveEquation() {
+            var a = jsConsole.readInteger('#a');
+            var b = jsConsole.readInteger('#b');
+            var c = jsConsole.readInteger('#c');
+            var discriminant = (b * b) - (4 * a * c);
+            if (discriminant > 0) {
+                var root1 = ((-b) + Math.sqrt(discriminant)) / (2 * a);
+                var root2 = ((-b) - Math.sqrt(discriminant)) / (2 * a);
+                jsConsole.writeLine('The real roots are: ' + root1 + ' and ' + root2);
+            }
+            else if (discriminant === 0) {
+                var root = ((-b) / (2 * a));
+                jsConsole.writeLine('The is one real root: ' + root);
+            }
+            else {
+                jsConsole.writeLine('There are no real roots.');
+            }
+
+        }
+    </script>
+</body>
+
+</html>

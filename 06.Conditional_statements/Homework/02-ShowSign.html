@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>02.Show sign</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="styles/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="01-IfGreater.html">01.If greater</a> | 
+            <a href="02-ShowSign.html" class="current">02.Show sign</a> | 
+            <a href="03-GreatestOfThree.html">03.Greatest of three</a> | 
+            <a href="04-SortIntegers.html">04.Sort integers</a> |  
+            <a href="05-CaseDigit.html">05.Case digit</a> | 
+            <a href="06-QuadraticEquation.html">06.Quadratic equation</a> | 
+            <a href="07-GreatestOfFive.html">07.Greatest of five</a> | 
+            <a href="08-NumberNames.html">08.Number names</a>
+        </nav>
+    </header>
+    <p>
+        Write a script that shows the sign (+ or -) of the product of three real numbers without calculating it. Use a sequence of if statements.
+    </p>
+    <table>
+        <tr>
+            <td>
+                <label for="a">a:</label>
+            </td>
+            <td>
+                <input type="text" id="a" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="b">b:</label>
+            </td>
+            <td>
+                <input type="text" id="b" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="c">c:</label>
+            </td>
+            <td>
+                <input type="text" id="c" />
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button class="execute" onclick="checkSign()">Check!</button>
+            </td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+
+
+    <script src="scripts/js-console.js">
+    </script>
+    <script>
+        function checkSign() {
+            var a = jsConsole.readInteger('#a');
+            var b = jsConsole.readInteger('#b');
+            var c = jsConsole.readInteger('#c');
+            jsConsole.writeLine('a = ' + a + '; b = ' + b + '; c = ' + c);
+            if (a > 0 && b > 0 && c > 0) {
+                jsConsole.writeLine('The product of these numbers is positive.');
+            }
+            else if ((a < 0 && b < 0 && c > 0) || (a < 0 && c < 0 && b > 0) || (c < 0 && b < 0 && a > 0)) {
+                jsConsole.writeLine('The product of these numbers is positive.');
+            }
+            else if (a == 0 || b == 0 || c == 0) {
+                jsConsole.writeLine('The product of these numbers is 0.');
+            }
+            else {
+                jsConsole.writeLine('The product of these numbers is negative.');
+            }
+        }
+    </script>
+</body>
+
+</html>

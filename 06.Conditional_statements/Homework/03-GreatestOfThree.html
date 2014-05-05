@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>03.Greatest of three</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="styles/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="01-IfGreater.html">01.If greater</a> | 
+            <a href="02-ShowSign.html">02.Show sign</a> | 
+            <a href="03-GreatestOfThree.html" class="current">03.Greatest of three</a> | 
+            <a href="04-SortIntegers.html">04.Sort integers</a> |  
+            <a href="05-CaseDigit.html">05.Case digit</a> | 
+            <a href="06-QuadraticEquation.html">06.Quadratic equation</a> | 
+            <a href="07-GreatestOfFive.html">07.Greatest of five</a> | 
+            <a href="08-NumberNames.html">08.Number names</a>
+        </nav>
+    </header>
+    <p>
+        Write a script that finds the biggest of three integers using nested if statements.
+    </p>
+    <table>
+        <tr>
+            <td>
+                <label for="a">a:</label>
+            </td>
+            <td>
+                <input type="text" id="a" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="b">b:</label>
+            </td>
+            <td>
+                <input type="text" id="b" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="c">c:</label>
+            </td>
+            <td>
+                <input type="text" id="c" />
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button class="execute" onclick="checkNumber()">Check!</button>
+            </td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+
+
+    <script src="scripts/js-console.js">
+    </script>
+    <script>
+        function checkNumber() {
+            var a = jsConsole.readInteger('#a');
+            var b = jsConsole.readInteger('#b');
+            var c = jsConsole.readInteger('#c');
+            jsConsole.writeLine('a = ' + a + '; b = ' + b + '; c = ' + c);
+            if (a > b && a > c) {
+                jsConsole.writeLine(a + ' is the greatest number.');
+            }
+            else if (b > a && b > c) {
+                jsConsole.writeLine(b + ' is the greatest number.');
+            }
+            else if (c > b && c > a) {
+                jsConsole.writeLine(c + ' is the greatest number.');
+            }
+            else if (a == b && a > c) {
+                jsConsole.writeLine(a + ' is the greatest number.');
+            }
+            else if (a > b && a == c) {
+                jsConsole.writeLine(a + ' is the greatest number.');
+            }
+            else if (b == c && b > a) {
+                jsConsole.writeLine(b + ' is the greatest number.');
+            }
+            else {
+                jsConsole.writeLine('The three numbers are equal.');
+            }
+        }
+    </script>
+</body>
+
+</html>
