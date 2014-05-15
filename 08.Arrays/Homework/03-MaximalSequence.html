@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>03.Maximal sequence</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="styles/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="01-MultipliedBy5.html">01.Multiplied by 5</a> | 
+            <a href="02-Lexicographically.html">02.Lexicographically</a> | 
+            <a href="03-MaximalSequence.html" class="current">03.Maximal sequence</a> | 
+            <a href="04-MaxIncreasingSeq.html">04.Maximal increasing sequence</a> |
+            <a href="05-SelectionSort.html">05.Selection sort</a> | 
+            <a href="06-MostFrequentNumber.html">06.Most frequent number</a> | 
+            <a href="07-BinarySearch.html">07.Binary search</a>
+
+        </nav>
+    </header>
+    <p>
+        Write a script that finds the maximal sequence of equal elements in an array.
+        <br />
+        Please type the sequence separated by ", ".
+    </p>
+    <table>
+        <tr>
+            <td>
+                <label for="numbers">Sequence: </label>
+            </td>
+            <td>
+                <input type="text" id="numbers" />
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button class="execute" onclick="countNumbers()">Start!</button>
+            </td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="scripts/js-console.js">
+    </script>
+    <script>
+        function countNumbers() {
+            var numbers = jsConsole.read('#numbers');
+            var sequence = numbers.split(', ');
+            var temp = 1;
+            var counter = 1;
+            var sequenceDigit = 0;
+            for (var index = 0; index < sequence.length; index++) {
+                if (sequence[index] == sequence[index + 1]) {
+                    temp++;
+                    if (temp > counter) {
+                        counter = temp;
+                        sequenceDigit = sequence[index];
+                    }
+                }
+                else {
+                    temp = 1;
+                }
+            }
+            jsConsole.write('The maximal sequence is: ');
+            for (var times = 0; times < counter; times++) {
+                jsConsole.write(sequenceDigit + ' ');
+            }
+            jsConsole.writeLine('<br />');
+        }
+    </script>
+</body>
+</html>

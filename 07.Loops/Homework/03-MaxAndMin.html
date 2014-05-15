@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>03.Max And Min</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="styles/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="01-From1ToN.html">01.Numbers from 1 to N</a> | 
+            <a href="02-DivisibleBy3And7.html">02.Divisible by 3 and 7</a> | 
+            <a href="03-MaxAndMin.html" class="current">03.Max And Min</a> | 
+            <a href="04-Lexicographicaly.html">04.Lexicographicaly</a>
+        </nav>
+    </header>
+    <p>
+        Write a script that finds the max and min number from a sequence of numbers.
+    </p>
+    <table>
+        <tr>
+            <td>
+                <label for="n">Input numbers separated by ",":</label>
+            </td>
+            <td>
+                <input type="text" id="n" />
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button class="execute" onclick="readArray()">Find!</button>
+            </td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="scripts/js-console.js">
+    </script>
+    <script>
+        function readArray() {
+            var numbers = jsConsole.read("#n");
+            numbers = numbers.split(',');
+
+            var max = -Infinity;
+            var min = Infinity;
+            for (var i = 0; i < numbers.length; i++) {
+                var parsedValue = parseInt(numbers[i]);
+                if (parsedValue > max) {
+                    max = numbers[i];
+                }
+                if (parsedValue < min) {
+                    min = numbers[i];
+                }
+            }
+            jsConsole.writeLine("Max: " + max + "<br/>Min: " + min);
+        }
+    </script>
+</body>
+</html>

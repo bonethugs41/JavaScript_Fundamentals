@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>02.Lexicographically</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="styles/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="01-MultipliedBy5.html">01.Multiplied by 5</a> | 
+            <a href="02-Lexicographically.html" class="current">02.Lexicographically</a> | 
+            <a href="03-MaximalSequence.html">03.Maximal sequence</a> | 
+            <a href="04-MaxIncreasingSeq.html">04.Maximal increasing sequence</a> |
+            <a href="05-SelectionSort.html">05.Selection sort</a> | 
+            <a href="06-MostFrequentNumber.html">06.Most frequent number</a> | 
+            <a href="07-BinarySearch.html">07.Binary search</a>
+
+        </nav>
+    </header>
+    <p>
+        Write a script that compares two char arrays lexicographically (letter by letter).
+    </p>
+    <table>
+        <tr>
+            <td>
+                <label for="firstString">String 1: </label>
+            </td>
+            <td>
+                <input type="text" id="firstString"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="secondString">String 2: </label>
+            </td>
+            <td>
+                <input type="text" id="secondString"/>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button class="execute" onclick="compareChars()">Start!</button>
+            </td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="scripts/js-console.js">
+    </script>
+    <script>
+        function compareChars() {
+            var firstString = jsConsole.read('#firstString');
+            var secondString = jsConsole.read('#secondString');
+            if (firstString.length >= secondString.length) {
+                for (var i = 0; i < firstString.length; i++) {
+                    if (firstString[i] == secondString[i]) {
+                        jsConsole.writeLine(firstString[i] + ' is the same as ' + secondString[i]);
+                    }
+                    else {
+                        jsConsole.writeLine(firstString[i] + ' is not the same as ' + secondString[i]);
+                    }
+                }
+            }
+            else {
+                for (var i = 0; i < secondString.length; i++) {
+                    if (firstString[i] == secondString[i]) {
+                        jsConsole.writeLine(firstString[i] + ' is the same as ' + secondString[i]);
+                    }
+                    else {
+                        jsConsole.writeLine(firstString[i] + ' is not the same as ' + secondString[i]);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

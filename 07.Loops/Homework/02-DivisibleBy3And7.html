@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>02.Divisible by 3 and 7</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="styles/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="01-From1ToN.html">01.Numbers from 1 to N</a> | 
+            <a href="02-DivisibleBy3And7.html" class="current">02.Divisible by 3 and 7</a> | 
+            <a href="03-MaxAndMin.html">03.Max And Min</a> | 
+            <a href="04-Lexicographicaly.html">04.Lexicographicaly</a>
+        </nav>
+    </header>
+    <p>
+        Write a script that prints all the numbers from 1 to N, that are not divisible by 3 and 7 at the same time.
+    </p>
+    <table>
+        <tr>
+            <td>
+                <label for="n">N:</label>
+            </td>
+            <td>
+                <input type="text" id="n" />
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button class="execute" onclick="printNumbers()">Print!</button>
+            </td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="scripts/js-console.js">
+    </script>
+    <script>
+        function printNumbers() {
+            var n = jsConsole.readInteger('#n');
+            for (var i = 1; i <= n; i++) {
+                if (i % 21 != 0) {
+                    jsConsole.writeLine(i);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

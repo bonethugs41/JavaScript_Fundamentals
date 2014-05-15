@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>06.Most frequent number</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="styles/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="01-MultipliedBy5.html">01.Multiplied by 5</a> | 
+            <a href="02-Lexicographically.html">02.Lexicographically</a> | 
+            <a href="03-MaximalSequence.html">03.Maximal sequence</a> | 
+            <a href="04-MaxIncreasingSeq.html">04.Maximal increasing sequence</a> |
+            <a href="05-SelectionSort.html">05.Selection sort</a> | 
+            <a href="06-MostFrequentNumber.html" class="current">06.Most frequent number</a> | 
+            <a href="07-BinarySearch.html">07.Binary search</a>
+
+        </nav>
+    </header>
+    <p>
+        Write a program that finds the most frequent number in an array. 
+        <br />
+        Please type the elements of the array separated by ", ".
+    </p>
+    <table>
+        <tr>
+            <td>
+                <label for="numbers">Elements: </label>
+            </td>
+            <td>
+                <input type="text" id="numbers" />
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button class="execute" onclick="sorting()">Start!</button>
+            </td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="scripts/js-console.js">
+    </script>
+    <script>
+        function sorting() {
+            var numbers = jsConsole.read('#numbers');
+            var array = numbers.split(', ');
+            var counter = 0;
+            var numberOfSameElements = 0;
+            var element;
+
+            for (var i = 0; i < array.length; i++) {
+                for (var j = 0; j < array.length; j++) {
+                    if (array[i] == array[j]) {
+                        counter++;
+                    }
+                }
+                if (counter > numberOfSameElements) {
+                    numberOfSameElements = counter;
+                    element = array[i];
+                }
+                counter = 0;
+            }
+
+            jsConsole.writeLine('The number ' + element + ' is repeated ' + numberOfSameElements + ' times');
+
+        }
+    </script>
+</body>
+</html>

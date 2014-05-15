@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>05.Selection sort</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="styles/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="01-MultipliedBy5.html">01.Multiplied by 5</a> | 
+            <a href="02-Lexicographically.html">02.Lexicographically</a> | 
+            <a href="03-MaximalSequence.html">03.Maximal sequence</a> | 
+            <a href="04-MaxIncreasingSeq.html">04.Maximal increasing sequence</a> |
+            <a href="05-SelectionSort.html" class="current">05.Selection sort</a> | 
+            <a href="06-MostFrequentNumber.html">06.Most frequent number</a> | 
+            <a href="07-BinarySearch.html">07.Binary search</a>
+
+        </nav>
+    </header>
+    <p>
+        Sorting an array means to arrange its elements in increasing order. Write a script to sort an array. 
+        <br />
+        Use the "selection sort" algorithm: Find the smallest element, move it at the first position, find the smallest from the rest, move it at the second position, etc.
+        <br />
+        Please type the elements of the array separated by ", ".
+    </p>
+    <table>
+        <tr>
+            <td>
+                <label for="numbers">Elements: </label>
+            </td>
+            <td>
+                <input type="text" id="numbers" />
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button class="execute" onclick="sorting()">Start!</button>
+            </td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="scripts/js-console.js">
+    </script>
+    <script>
+        function sorting() {
+            var numbers = jsConsole.read('#numbers');
+            var array = numbers.split(', ');
+            for (var i = 0; i < array.length; i++) {
+                array[i] = parseInt(array[i]);
+            }
+
+            var startingPosition = 0;
+            while (startingPosition <= array.length - 1) {
+                var currentMinIndex = 0;
+                var currentMin = Infinity;
+                for (var i = startingPosition; i < array.length; i++) {
+                    if (array[i] < currentMin) {
+                        currentMin = array[i];
+                        currentMinIndex = i;
+                    }
+                }
+
+                var temp = array[startingPosition];
+
+                array[startingPosition] = currentMin;
+                array[currentMinIndex] = temp;
+                startingPosition++;
+            }
+
+            for (var i = 0; i < array.length; i++) {
+                jsConsole.writeLine(i + ": " + array[i]);
+            }
+        }
+    </script>
+</body>
+</html>
