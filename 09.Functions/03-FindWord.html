@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>03.Find Word</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="styles/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="01-LastDigitName.html">01.Last digit name</a> | 
+            <a href="02-ReverseDigits.html">02.Reverse digits</a> | 
+            <a href="03-FindWord.html" class="current">03.Find Word</a> | 
+            <a href="04-CountingDivs.html">04.Counting divs</a> |
+            <a href="05-CountingNumbers.html">05.Counting numbers</a> | 
+            <a href="06-BiggerThanNeighbors.html">06.Bigger than neighbors </a> | 
+            <a href="07-IndexOfFirstElement.html">07.Index of first element</a>
+
+        </nav>
+    </header>
+    <p>
+        Write a function that finds all the occurrences of word in a text.
+        <br />
+        *The search can case sensitive or case insensitive
+        <br />
+        *Use function overloading
+    </p>
+    <table>
+        <tr>
+            <td>
+                <label for="text">Text: </label>
+            </td>
+            <td>
+                <textarea id="text" cols="40" rows="6"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="search">Word:</label>
+            </td>
+            <td>
+                <input type="text" id="search" />
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button class="execute" onclick="mainFunction()">Find!</button>
+            </td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="scripts/js-console.js">   
+    </script>
+    <script>
+        function mainFunction() {
+            var text = jsConsole.read("#text");
+            var search = jsConsole.read("#search");
+            //var pattern = '/\b' + search + '\b/g';
+            var flags = "gi";
+            var regex = new RegExp("\\b" + search + "\\b", flags);
+            var count = text.match(regex);
+
+            jsConsole.writeLine("There are <strong>" + count.length + "</strong> occurances of the word <strong>\"" + search +"\"</strong>");
+
+        }
+    </script>
+</body>
+</html>

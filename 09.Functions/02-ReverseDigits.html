@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>02.Reverse digits</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="styles/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="01-LastDigitName.html">01.Last digit name</a> | 
+            <a href="02-ReverseDigits.html" class="current">02.Reverse digits</a> | 
+            <a href="03-FindWord.html">03.Find Word</a> | 
+            <a href="04-CountingDivs.html">04.Counting divs</a> |
+            <a href="05-CountingNumbers.html">05.Counting numbers</a> | 
+            <a href="06-BiggerThanNeighbors.html">06.Bigger than neighbors </a> | 
+            <a href="07-IndexOfFirstElement.html">07.Index of first element</a>
+
+        </nav>
+    </header>
+    <p>
+        Write a function that reverses the digits of given decimal number.
+    </p>
+    <table>
+        <tr>
+            <td>
+                <label for="tb-input">Number: </label>
+            </td>
+            <td>
+                <input type="text" id="tb-input" />
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button class="execute" onclick="mainFunction()">Find!</button>
+            </td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="scripts/js-console.js">
+    </script>
+    <script>
+        function reverseNumber(number) {
+            var array = [];
+            var counter = 0;
+            while (number != 0) {
+                array[counter] = number % 10;
+                number = Math.floor(number / 10);
+                counter++;
+            }
+
+            var finalNumber = 0;
+            for (var i = 0; i < array.length; i++) {
+                finalNumber = finalNumber * 10 + array[i];
+            }
+
+            return finalNumber;
+        }
+
+        function mainFunction(){
+            var number = jsConsole.readInteger('#tb-input');
+            var reversedNumber = reverseNumber(number);
+            jsConsole.writeLine(reversedNumber);
+        }
+    </script>
+</body>
+</html>

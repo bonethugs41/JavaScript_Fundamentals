@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>01.Last digit name</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="styles/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="01-LastDigitName.html" class="current">01.Last digit name</a> | 
+            <a href="02-ReverseDigits.html">02.Reverse digits</a> | 
+            <a href="03-FindWord.html">03.FindWord</a> | 
+            <a href="04-CountingDivs.html">04.Counting divs</a> |
+            <a href="05-CountingNumbers.html">05.Counting numbers</a> | 
+            <a href="06-BiggerThanNeighbors.html">06.Bigger than neighbors </a> | 
+            <a href="07-IndexOfFirstElement.html">07.Index of first element</a>
+
+        </nav>
+    </header>
+    <p>
+        Write a function that returns the last digit of given integer as an English word.
+	</p>
+    <table>
+        <tr>
+            <td>
+                <label for="tb-input">Integer: </label>
+            </td>
+            <td>
+                <input type="text" id="tb-input" />
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button class="execute" onclick="mainFunction()">Start!</button>
+            </td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="scripts/js-console.js">
+    </script>
+    <script>
+        function findLastDigit(number) {
+            var lastDigit = number % 10;
+            return lastDigit;
+
+        }
+
+        function printDigit(lastDigit) {
+            switch (lastDigit){
+                case 0: 
+                {
+                    jsConsole.writeLine('Zero');
+                    break;
+                }
+                case 1: 
+                {
+                    jsConsole.writeLine('One');
+                    break;
+                }
+                case 2: 
+                {
+                    jsConsole.writeLine('Two');
+                    break;
+                }
+                case 3: 
+                {
+                    jsConsole.writeLine('Three');
+                    break;
+                }
+                case 4: 
+                {
+                    jsConsole.writeLine('Four');
+                    break;
+                }
+                case 5: 
+                {
+                    jsConsole.writeLine('Five');
+                    break;
+                }
+                case 6: 
+                {
+                    jsConsole.writeLine('Six');
+                    break;
+                }
+                case 7: 
+                {
+                    jsConsole.writeLine('Seven');
+                    break;
+                }
+                case 8: 
+                {
+                    jsConsole.writeLine('Eight');
+                    break;
+                }
+                case 9: 
+                {
+                    jsConsole.writeLine('Nine');
+                    break;
+                }
+            }
+        }
+
+        function mainFunction() {
+            var number = jsConsole.readInteger('#tb-input');
+            var lastDigit = findLastDigit(number);
+            printDigit(lastDigit);
+        }
+    </script>
+</body>
+</html>
