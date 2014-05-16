@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>05.Counting numbers</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="styles/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="01-LastDigitName.html">01.Last digit name</a> | 
+            <a href="02-ReverseDigits.html">02.Reverse digits</a> | 
+            <a href="03-FindWord.html">03.Find Word</a> | 
+            <a href="04-CountingDivs.html">04.Counting divs</a> |
+            <a href="05-CountingNumbers.html" class="current">05.Counting numbers</a> | 
+            <a href="06-BiggerThanNeighbors.html">06.Bigger than neighbors </a>| 
+            <a href="07-IndexOfFirstElement.html">07.Index of first element</a>
+
+        </nav>
+    </header>
+    <p>
+        Write a function that counts how many times given number appears in given array.
+        <br />
+        Write a test function to check if the function is working correctly.
+        <br />
+        <span id="important">*Please enter the numbers in the sequence separated by ", ".</span>
+    </p>
+    <table>
+        <tr>
+            <td>
+                <label for="tb-sequence">Sequence: </label>
+            </td>
+            <td>
+                <input type="text" id="tb-sequence" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="tb-number">Number: </label>
+            </td>
+            <td>
+                <input type="text" id="tb-number" />
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button class="execute" onclick="mainFunction()">Count!</button>
+            </td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="scripts/js-console.js">
+    </script>
+    <script>
+        function numberCount(array, number) {
+            var counter = 0;
+            for (var i = 0; i < array.length; i++) {
+                if (number == array[i]) {
+                    counter++;
+                }
+            }
+
+            return counter;
+        }
+
+        function printResult(result) {
+            if (result != 1) {
+                jsConsole.writeLine(result + ' times');
+            }
+            else {
+                jsConsole.writeLine(result + ' time');
+            }
+
+        }
+
+        function mainFunction() {
+            var sequenceArray = jsConsole.read('#tb-sequence').split(', ');
+            var theNumber = jsConsole.readInteger('#tb-number');
+            var accurances = numberCount(sequenceArray, theNumber);
+
+            printResult(accurances);
+        }
+    </script>
+</body>
+</html>

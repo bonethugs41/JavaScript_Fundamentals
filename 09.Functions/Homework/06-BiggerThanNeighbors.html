@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>06.Bigger than neighbors</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="styles/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="01-LastDigitName.html">01.Last digit name</a> | 
+            <a href="02-ReverseDigits.html">02.Reverse digits</a> | 
+            <a href="03-FindWord.html">03.Find Word</a> | 
+            <a href="04-CountingDivs.html">04.Counting divs</a> |
+            <a href="05-CountingNumbers.html">05.Counting numbers</a> | 
+            <a href="06-BiggerThanNeighbors.html" class="current">06.Bigger than neighbors</a>| 
+            <a href="07-IndexOfFirstElement.html">07.Index of first element</a>
+
+        </nav>
+    </header>
+    <p>
+        Write a function that checks if the element at given position in given array of integers is bigger than its two neighbors (when such exist).
+        <br />
+        <span id="important">*Please enter the numbers in the sequence separated by ", ".</span>
+    </p>
+    <table>
+        <tr>
+            <td>
+                <label for="tb-sequence">Sequence: </label>
+            </td>
+            <td>
+                <input type="text" id="tb-sequence" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="tb-position">Position: </label>
+            </td>
+            <td>
+                <input type="text" id="tb-position" />
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button class="execute" onclick="mainFunction()">Count!</button>
+            </td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="scripts/js-console.js">
+    </script>
+    <script>
+        function checkIfBigger(array, position) {
+            var checkResult = new Boolean;
+            if (position == 0 || position == array.length - 1) {
+                jsConsole.writeLine("The position cannot be first or last element in the sequence!");
+            }
+            else {
+                if (array[position] > array[position + 1] && array[position] > array[position - 1]) {
+                    checkResult = true;
+                    jsConsole.writeLine('The number at the specified index is bigger? ' + checkResult);
+                }
+                else {
+                    checkResult = false;
+                    jsConsole.writeLine('The number at the specified index is bigger? ' + checkResult);
+                }
+            }
+        }
+
+        function mainFunction() {
+            var sequenceArray = jsConsole.read('#tb-sequence').split(', ');
+            var numberPosition = jsConsole.readInteger('#tb-position');
+            checkIfBigger(sequenceArray, numberPosition);
+        }
+    </script>
+</body>
+</html>

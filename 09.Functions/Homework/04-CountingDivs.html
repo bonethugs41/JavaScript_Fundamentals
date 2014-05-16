@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>04.Counting divs</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="styles/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="01-LastDigitName.html">01.Last digit name</a> | 
+            <a href="02-ReverseDigits.html">02.Reverse digits</a> | 
+            <a href="03-FindWord.html">03.Find Word</a> | 
+            <a href="04-CountingDivs.html" class="current">04.Counting divs</a> |
+            <a href="05-CountingNumbers.html">05.Counting numbers</a> | 
+            <a href="06-BiggerThanNeighbors.html">06.Bigger than neighbors </a>| 
+            <a href="07-IndexOfFirstElement.html">07.Index of first element</a>
+
+        </nav>
+    </header>
+    <p>
+        Write a function to count the number of divs on the web page.
+        <br />
+        <span id="important">*Please enter the element to be count - div, table, nav, etc.</span>
+    </p>
+    <table>
+        <tr>
+            <td>
+                <label for="tb-input">Tag: </label>
+            </td>
+            <td>
+                <input type="text"  id="tb-input" />
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button class="execute" onclick="mainFunction()">Count!</button>
+            </td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="scripts/js-console.js">
+    </script>
+    <script>
+        function elementsCounter(string) {
+            var counter = document.getElementsByTagName(string).length;
+
+            return counter;
+        }
+
+        function mainFunction() {
+            var element = jsConsole.read('#tb-input');
+            var elementNumber = elementsCounter(element);
+            if (elementNumber > 1) {
+                jsConsole.writeLine('There is ' + elementNumber + ' &#60' + element + '&#62 tags in this HTML');
+            }
+            else if (elementNumber == 1) {
+                jsConsole.writeLine('There are ' + elementNumber + ' &#60' + element + '&#62 tag in this HTML');
+            }
+            else {
+                jsConsole.writeLine('There is no such tag in this HTML');
+            }
+        }
+    </script>
+</body>
+</html>

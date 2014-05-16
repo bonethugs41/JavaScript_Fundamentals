@@ -79,3 +79,8 @@ p {
 table {
     font-size: 14px;
 }
+
+#important {
+    color:red;
+    font-weight:800;
+}
