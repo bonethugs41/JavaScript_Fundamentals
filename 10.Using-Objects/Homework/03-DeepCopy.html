@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>03.Deep copy</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="styles/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="01-Geometry.html">01.Geometry</a> | 
+            <a href="02-RemoveElements.html">02.Remove elements</a> | 
+            <a href="03-DeepCopy.html" class="current">03.Deep copy</a> | 
+            <a href="04-CheckProperty.html">04.Check property</a> |
+            <a href="05-Youngest.html">05.Youngest</a> |
+            <a href="06-Grouping.html">06.Grouping</a>
+        </nav>
+    </header>
+    <p>
+        Write a function that makes a deep copy of an object.
+        <br />
+        *The function should work for both primitive and reference types
+    </p>
+    <table>
+        <tr>
+            <td></td>
+            <td>
+                <button class="execute" onclick="mainFunction()">Start!</button>
+            </td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="scripts/js-console.js">
+    </script>
+    <script>
+        function mainFunction() {
+            var someObject = {
+                a: 1,
+                b: 6,   
+                c: "pesho",
+            }
+
+            var cloneObject = Object.create(someObject);
+            for (var i in cloneObject) {
+                jsConsole.writeLine(cloneObject[i]);
+            }
+        }
+    </script>
+</body>
+</html>

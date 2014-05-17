@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>04.Check property</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="styles/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="01-Geometry.html">01.Geometry</a> | 
+            <a href="02-RemoveElements.html">02.Remove elements</a> | 
+            <a href="03-DeepCopy.html">03.Deep copy</a> | 
+            <a href="04-CheckProperty.html" class="current">04.Check property</a> |
+            <a href="05-Youngest.html">05.Youngest</a> |
+            <a href="06-Grouping.html">06.Grouping</a>
+        </nav>
+    </header>
+    <p>
+        Write a function that checks if a given object contains a given property.
+        <br />
+        *The function should work for both primitive and reference types
+        <br />
+        <span class="important">*name, age, height, weight</span>
+    </p>
+    <table>
+        <tr>
+            <td>
+                <label for="tb-input">Property: </label>
+            </td>
+            <td>
+                <input type="text" id="tb-input" />
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button class="execute" onclick="mainFunction()">Start!</button>
+            </td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="scripts/js-console.js">
+    </script>
+    <script>
+        function checkProperty(object, property) {
+            for (var i in object) {
+                if (i === property) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        function mainFunction() {
+            var Person = {
+                name: 'Ivan',
+                age: 25,
+                height: 175,
+                weight: 90
+            };
+            var property = jsConsole.read('#tb-input');
+            jsConsole.writeLine(checkProperty(Person, property));
+        }
+    </script>
+</body>
+</html>

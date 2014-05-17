@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>02.Remove elements</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="styles/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="01-Geometry.html">01.Geometry</a> | 
+            <a href="02-RemoveElements.html" class="current">02.Remove elements</a> | 
+            <a href="03-DeepCopy.html">03.Deep copy</a> | 
+            <a href="04-CheckProperty.html">04.Check property</a> |
+            <a href="05-Youngest.html">05.Youngest</a> |
+            <a href="06-Grouping.html">06.Grouping</a>
+        </nav>
+    </header>
+    <p>
+        Write a function that removes all elements with a given value.
+        <br />
+        *Attach it to the array type
+        <br />
+        *Read about prototype and how to attach methods
+        <br />
+        <span class="important">*Please enter the array numbers separated by ", ".</span>
+    </p>
+    <table>
+        <tr>
+            <td>
+                <label for="tb-input">Numbers:</label>
+            </td>
+            <td>
+                <input type="text" id="tb-input"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="tb-remove">Number to remove:</label>
+            </td>
+            <td>
+                <input type="text" id="tb-remove"/>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button class="execute" onclick="mainFunction()">Remove!</button>
+            </td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="scripts/js-console.js">
+    </script>
+    <script>
+        function mainFunction() {
+            if (!Array.prototype.remove) {
+                Array.prototype.remove = function (element) {
+                    var arr = [];
+                    for (var i = 0; i < this.length; i++) {
+                        if (this[i] != element) {
+                            arr.push(this[i]);
+                        }
+                    }
+                    return arr;
+                }
+            }
+
+            var numbersArray = jsConsole.read('#tb-input').split(', ');
+            var removeNumber = jsConsole.readInteger('#tb-remove');
+            jsConsole.writeLine('Current array: ' + numbersArray);
+            jsConsole.writeLine('Number to remove: ' + removeNumber);
+            jsConsole.writeLine('New array: ' + numbersArray.remove(removeNumber));
+            jsConsole.writeLine(' ');
+        }
+    </script>
+</body>
+</html>
