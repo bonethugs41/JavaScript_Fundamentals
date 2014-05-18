@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>06.Grouping</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="styles/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="01-ReverseString.html">01.Reverse string</a> | 
+            <a href="02-Brackets.html">02.Brackets</a> | 
+            <a href="03-CountSubstring.html">03.Count Substring</a> | 
+            <a href="04-HTMLtags.html">04.HTML Tags</a> |
+            <a href="05-ReplaceSpaces.html">05.Replace Spaces</a> |
+            <a href="06-Grouping.html" class="current">06.Grouping</a> |
+            <a href="07-URLparser.html">07.URL Parser</a> |
+            <a href="08-HrefToURL.html">08.Href to Url</a> |
+            <a href="09-ExtractEmail.html">09.Extract email</a> |
+            <a href="10-Palindrome.html">10.Palidrome</a> |
+            <a href="11-StringFormat.html">11.String format</a> |
+            <a href="12-Templates.html">12.Template</a>
+        </nav>
+    </header>
+    <p>
+        Write a function that extracts the content of a html page given as text. The function should return anything that is in a tag, without the tags.
+        <br />
+    </p>
+    <table>
+        <tr>
+            <td>
+                <label for="tb-input">Text:</label>
+            </td>
+            <td>
+                <input id="tb-input" style="width:750px;" value="<html><head><title>Sample site</title></head><body><div>text<div>more text</div>and more...</div>in body</body></html>
+"/>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button class="execute" onclick="mainFunction()">Start!</button>
+            </td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="scripts/js-console.js">
+    </script>
+    <script>
+        function mainFunction() {
+            var text = jsConsole.read('#tb-input');
+            var result = text.replace(/(<([^>]+)>)/ig, "");
+
+            jsConsole.writeLine(result);
+        }
+    </script>
+</body>
+</html>
